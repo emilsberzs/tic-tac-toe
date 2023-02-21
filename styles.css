@@ -1,3 +1,27 @@
 h1 {
+    font-size: 6em;
     font-style: italic;
+    text-align: center;
+}
+
+#board {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    background-color: lightblue;
+    justify-items: center;
+    align-items: center;
+}
+
+.square {
+    font-size: 7em;
+    text-align: center;
+    width: 194px;
+    height: 194px;
+    line-height: 193px;
+    background-color: azure;
 }
