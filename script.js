@@ -43,42 +43,40 @@ function resetField() {
 //Check if player has winning combo (brutal but works)
 function checkWin() {
     if (square_1.innerHTML != "" && square_1.innerHTML == square_2.innerHTML && square_2.innerHTML == square_3.innerHTML) {
-        console.log("Game over")
         resetField()
         alert('Game Over!')
     }
     else if (square_4.innerHTML != "" && square_4.innerHTML == square_5.innerHTML && square_5.innerHTML == square_6.innerHTML) {
-        console.log("Game over")
         resetField()
         alert('Game Over!')
     }
     else if (square_7.innerHTML != "" && square_7.innerHTML == square_8.innerHTML && square_8.innerHTML == square_9.innerHTML) {
-        console.log("Gamer over")
+
         resetField()
         alert('Game Over!')
     }
     else if (square_1.innerHTML != "" && square_1.innerHTML == square_4.innerHTML && square_4.innerHTML == square_7.innerHTML) {
-        console.log("Gamer over")
+
         resetField()
         alert('Game Over!')
     }
     else if (square_2.innerHTML != "" && square_2.innerHTML == square_5.innerHTML && square_5.innerHTML == square_8.innerHTML) {
-        console.log("Gamer over")
+
         resetField()
         alert('Game Over!')
     }
     else if (square_3.innerHTML != "" && square_3.innerHTML == square_6.innerHTML && square_6.innerHTML == square_9.innerHTML) {
-        console.log("Gamer over")
+
         resetField()
         alert('Game Over!')
     }
     else if (square_1.innerHTML != "" && square_1.innerHTML == square_5.innerHTML && square_5.innerHTML == square_9.innerHTML) {
-        console.log("Gamer over")
+
         resetField()
         alert('Game Over!')
     }
     else if (square_3.innerHTML != "" && square_3.innerHTML == square_5.innerHTML && square_5.innerHTML == square_7.innerHTML) {
-        console.log("Gamer over")
+
         resetField()
         alert('Game Over!')
     }
@@ -99,18 +97,17 @@ let active_player = playerOne;
 
 //Function to mark a square
 function markSquare(square) {
-    square.addEventListener('click', (event) => {
+    square.addEventListener('click', () => {
         if (square.innerHTML == '') {
             if (active_player == playerOne) {
                 square.innerHTML = active_player.symbol;
-                checkWin()
-
+                setTimeout(checkWin, 500)
                 active_player = playerTwo;
             }
             else if (active_player == playerTwo) {
                 square.innerHTML = active_player.symbol;
-                checkWin()
-
+                setTimeout(checkWin, 500)
+                //checkWin()
                 active_player = playerOne;
             }
         }
